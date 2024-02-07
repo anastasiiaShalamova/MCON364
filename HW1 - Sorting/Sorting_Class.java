@@ -4,6 +4,7 @@ import java.util.*;
 public class Sorting_Class {
 
     public static <T extends Comparable<T>> List<T> quickSort(List<T> list) {
+        
         if (list.size() <= 1) {
             return list;
         }
@@ -18,9 +19,11 @@ public class Sorting_Class {
             int cmp = element.compareTo(pivot);
             if (cmp < 0) {
                 less.add(element);
-            } else if (cmp > 0) {
+            } 
+            else if (cmp > 0) {
                 greater.add(element);
-            } else {
+            } 
+            else {
                 equal.add(element);
             }
         }
@@ -56,7 +59,8 @@ public class Sorting_Class {
         while (leftIndex < left.size() && rightIndex < right.size()) {
             if (left.get(leftIndex).compareTo(right.get(rightIndex)) < 0) {
                 result.add(left.get(leftIndex++));
-            } else {
+            } 
+            else {
                 result.add(right.get(rightIndex++));
             }
         }
@@ -110,7 +114,7 @@ public class Sorting_Class {
         System.out.println("===================================");
     }
 
-    private static <T extends Comparable<T>> boolean isSorted(List<T> list) {
+    static <T extends Comparable<T>> boolean isSorted(List<T> list) {
         for (int i = 0; i < list.size() - 1; i++) {
             if (list.get(i).compareTo(list.get(i + 1)) > 0) {
                 return false;
