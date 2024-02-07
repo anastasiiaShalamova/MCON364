@@ -22,7 +22,7 @@ public class Sorting_Class_Test {
         List<Student> actualSorted = Sorting_Class.quickSort(new ArrayList<>(unsortedList));
 
         assertTrue(Sorting_Class.isSorted(actualSorted),
-                "This list should be sorted in ascending order");
+                "List should be sorted in ascending order");
 
         assertIterableEquals(
                 Arrays.asList(
@@ -31,7 +31,7 @@ public class Sorting_Class_Test {
                         new Student("Yakov", 85)
                 ),
                 actualSorted,
-                "The sorted list should match the expected order"
+                "Sorted list should match the expected order"
         );
     }
 
@@ -46,7 +46,7 @@ public class Sorting_Class_Test {
         List<Student> actualSorted = Sorting_Class.mergeSort(new ArrayList<>(unsortedList));
 
         assertTrue(Sorting_Class.isSorted(actualSorted),
-                "The list should be sorted in ascending order");
+                "List should be sorted in ascending order");
 
         assertIterableEquals(
                 Arrays.asList(
@@ -55,7 +55,7 @@ public class Sorting_Class_Test {
                         new Student("Yakov", 85)
                 ),
                 actualSorted,
-                "The sorted list should match the expected order"
+                "Sorted list should match the expected order"
         );
     }
 
@@ -65,9 +65,9 @@ public class Sorting_Class_Test {
         List<Student> actualSorted = Sorting_Class.quickSort(new ArrayList<>(emptyList));
 
         assertTrue(Sorting_Class.isSorted(actualSorted),
-                "An empty list should remain empty and sorted");
+                "Empty list should remain empty and sorted");
         assertEquals(emptyList, actualSorted,
-                "The sorted empty list should match the original empty list");
+                "Sorted empty list should match the original empty list");
     }
 
     @Test
@@ -76,9 +76,9 @@ public class Sorting_Class_Test {
         List<Student> actualSorted = Sorting_Class.mergeSort(new ArrayList<>(singletonList));
 
         assertTrue(Sorting_Class.isSorted(actualSorted),
-                "A singleton list should remain sorted");
+                "List should remain sorted");
         assertEquals(singletonList, actualSorted,
-                "The sorted singleton list should match the original singleton list");
+                "Sorted list should match the original list");
     }
 }
 
