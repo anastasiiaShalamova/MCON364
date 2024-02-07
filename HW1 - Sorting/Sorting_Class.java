@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Sorting_Class {
 
+    // Quicksort for a list of comparable objects
     public static <T extends Comparable<T>> List<T> quickSort(List<T> list) {
         
         if (list.size() <= 1) {
@@ -15,6 +16,7 @@ public class Sorting_Class {
         List<T> equal = new ArrayList<>();
         List<T> greater = new ArrayList<>();
 
+        // dividing list into 3 parts based on the pivot
         for (T element : list) {
             int cmp = element.compareTo(pivot);
             if (cmp < 0) {
@@ -28,6 +30,7 @@ public class Sorting_Class {
             }
         }
 
+        // applying Quicksort
         List<T> result = new ArrayList<>();
         result.addAll(quickSort(less));
         result.addAll(equal);
@@ -36,6 +39,7 @@ public class Sorting_Class {
         return result;
     }
 
+    // applying Mergesort to a comparable objects
     public static <T extends Comparable<T>> List<T> mergeSort(List<T> list) {
         if (list.size() <= 1) {
             return list;
@@ -51,6 +55,7 @@ public class Sorting_Class {
         return merge(left, right);
     }
 
+    // merging 2 sorted lists into one single sorted list
     private static <T extends Comparable<T>> List<T> merge(List<T> left, List<T> right) {
         List<T> result = new ArrayList<>();
         int leftIndex = 0;
@@ -65,6 +70,7 @@ public class Sorting_Class {
             }
         }
 
+        // sdding any remaining elements from left and right lists
         result.addAll(left.subList(leftIndex, left.size()));
         result.addAll(right.subList(rightIndex, right.size()));
 
